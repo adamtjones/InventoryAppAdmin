@@ -41,7 +41,7 @@
 		<form novalidate name="newItem" ng-submit="header.submit(newItem.$valid)"><h3>Add New Inventory Item</h3>
 			Item name:<input placeholder="ex. tennis raquet" required ng-model="header.form.name"></input>
 			Price:<input placeholder="ex. $38.00" required ng-model="header.form.price"></input>
-			Quantity:<input placeholder="ex. 5" required ng-model="header.form.quantity"></input>
+			Quantity:<input type="number" placeholder="ex. 5" required ng-model="header.form.quantity"></input>
 			Color:<input placeholder="ex. blue" required ng-model="header.form.color"></input>
 			Discount:<input placeholder="ex. $2.00" required ng-model="header.form.discount"></input>
 			<button class="button">submit</button>

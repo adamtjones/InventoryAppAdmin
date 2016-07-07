@@ -26,7 +26,7 @@
 		
 		if (isValid) {
 			this.data.push(newObj);
-		//data = [];
+			this.form = [];
 	}
 	
 	};
