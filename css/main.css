@@ -1,0 +1,16 @@
+.denver {
+  text-align: center; }
+
+table {
+  text-align: center;
+  margin: auto; }
+
+label {
+  display: block; }
+
+form {
+  margin: auto;
+  text-align: center; }
+
+input.ng-invalid {
+  background-color: '#fdd'; }
