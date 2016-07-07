@@ -4,38 +4,37 @@
 	<!--Google Font-->
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
 	<title>Shopular Inventory</title>
-
 	<!--Bootstrap CDN-->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<!--CSS Reset-->
 	<link href="reset.css">
 	<!--CSS style sheet-->
 	<link rel="stylesheet" type="text/css" href="css/main.css">
-
-	<!--couldn't get background image to work in CSS-->
+	<!--couldn't get background image to work in CSS, so did below-->
 	<style type="text/css" media="screen">
 	body {
 		background-image: url(images/factory.jpg);
 	}
 	</style>
 </head>
+
 <body ng-controller='HeaderController as header'>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
 		<div class="denver" >
 			<h2 class="headline">Shopular Inventory</h2>
-				<table style="width:30%">
+				<table style="width:45%">
 				  <tr>
 				  	<th class="product">Item Name</th>
-				  	<th class="dallas">Price</th>
-				  	<th class="dallas">Quantity</th>
-				  	<th class="dallas">Color</th>
+				  	<th>Price</th>
+				  	<th>Quantity</th>
+				  	<th>Color</th>
 				  </tr>
 				  <tr ng-repeat="item in header.data | orderBy:'quantity'">
 				    <td class="product">{{item.name}}<img ng-show='item.discount != 0' src="images/sale.png"/></td>
-				    <td class="price">{{((item.price-item.discount) * 1.0575).toFixed(2) | currency}}</td>
+				    <td>{{((item.price-item.discount) * 1.0575).toFixed(2) | currency}}</td>
 				    <td>{{item.quantity}}</td>
 				    <td ng-bind='item.color'></td>
-				    <!--ng-bind above is alternative way to do same-->
+				    <!--ng-bind above is alternative way to do {{item.color}}-->
 				  </tr>
 				</table> 	
 		</div>
@@ -47,8 +46,6 @@
 			Discount:<input placeholder="ex. $2.00" required ng-model="header.form.discount"></input>
 			<button class="button">submit</button>
 		</form>
-
-
 	<!--Angular script after npm install angular in Terminal-->
 	<script src="/node_modules/angular/angular.js"></script>
 	<!--JQuery-->	
